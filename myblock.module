@@ -55,22 +55,21 @@ function myblock_block_configure($delta='') {
  * Implements hook_block_save();
  **/
 
-function myblock_block_save($delta = '', $edit = array()) {
-	switch($delta) {
-		case 'my_block' :
-		//saving the WYSIWIG text
-		variable_set('text_variable', $edit['text_body']['value']);
+function custom_block_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'my_block' :
+      // Saving the WYSIWYG text      
+      variable_set('text_variable', $edit['text_body']['value']);
 
-		//saving the file, setting it to a permanent state, setting a FID state
-		$file = file_load($edit['file']);
-		$file->status = FILE_STATUS_PERMANENT;
-		file_save($file);
-		$block = block_load('custom_block', $delta);
-		file_usage_add($file, 'custom_block', 'block', $block->bid);
-		variable_set('block_image_fid', $file->fid);
-		break;
-	}
-
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file = file_load($edit['file']);
+      $file->status = FILE_STATUS_PERMANENT;
+      file_save($file);
+      $block = block_load('custom_block', $delta);
+      file_usage_add($file, 'custom_block', 'block', $block->bid);
+      variable_set('block_image_fid', $file->fid);
+      break;
+  }
 }
 
 
