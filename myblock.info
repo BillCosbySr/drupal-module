@@ -1,0 +1,8 @@
+#This is like a config file. Gives druapl info it needs to know to install on 
+#drupal site. .module file is the code to run
+
+name = "My Block Module"
+description = "Custom block module"
+core = "7.x"
+version = "7.x-1.0"
+# dependencies[] = "views"
