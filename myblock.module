@@ -1,9 +1,14 @@
+<?php 
+
+/**
+ *@file
+ *myblock.module
+ */
 
 function myblock_block_info() {
-	$blocks['myblock'] = array(
-		'info' => t('My Custom Block'),
-		// DRUPAL_CACHE_PER_ROLE will be assumed
-	);
+  $blocks['myblock'] = array(
+    'info' => t('My Custom Block'),
+  );
 
-	return $blocks;
+  return $blocks;
 }
