@@ -1,7 +1,3 @@
-/**
-* @file
-* myblock.module
-*/
 
 function myblock_block_info() {
 	$blocks['myblock'] = array(
